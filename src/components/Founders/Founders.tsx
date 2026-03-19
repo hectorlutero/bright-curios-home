@@ -14,9 +14,9 @@ const Founders: React.FC = () => {
           </div>
           <div className="founder-info">
             <h3>Rafael Figueiredo</h3>
-            <p className="founder-role">CEO | Strategist & Investor</p>
+            <p className="founder-role">Strategic Lead & Operations</p>
             <p className="founder-bio">
-              Visionary manager and strategic lead focused on identifying high-ROI opportunities and steering large-scale business operations.
+              Visionary strategist focused on identifying high-ROI opportunities and steering large-scale business operations.
             </p>
           </div>
         </div>
@@ -27,7 +27,7 @@ const Founders: React.FC = () => {
           </div>
           <div className="founder-info">
             <h3>Hector Siman</h3>
-            <p className="founder-role">CTO | AI Architect & Product Engineer</p>
+            <p className="founder-role">Lead AI Architect & Product Systems</p>
             <p className="founder-bio">
               Multi-Agent systems specialist and operational AI expert leading the technical architecture and engineering of high-velocity products.
             </p>
