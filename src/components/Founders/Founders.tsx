@@ -23,10 +23,10 @@ const Founders: React.FC = () => {
 
         <div className="founder-card glass-panel">
           <div className="founder-image-wrapper">
-            <img src={rafaelImg} alt="Rafael" className="founder-image" />
+            <img src={rafaelImg} alt="Rafael Figueiredo" className="founder-image" />
           </div>
           <div className="founder-info">
-            <h3>Rafael</h3>
+            <h3>Rafael Figueiredo</h3>
             <p className="founder-role">Operations & Scaling</p>
             <p className="founder-bio">
               Expert in automating complex operational workflows and ROI-driven implementation.
