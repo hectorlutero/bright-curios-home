@@ -1,0 +1,47 @@
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.problem-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.problem-card:hover {
+  border-color: var(--accent-solid);
+  transform: translateY(-5px);
+}
+
+.problem-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--accent-solid);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-solid);
+  margin-bottom: 1.5rem;
+}
+
+.problem-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-main);
+}
+
+.problem-card p {
+  color: var(--text-dim);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+}

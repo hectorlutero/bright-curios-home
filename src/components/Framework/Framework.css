@@ -1,0 +1,62 @@
+.framework-section {
+  padding: 10rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.framework-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.framework-card {
+  padding: 3rem;
+  border-radius: 32px;
+  position: relative;
+  text-align: left;
+  transition: all 0.4s ease;
+}
+
+.framework-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(253, 224, 71, 0.3);
+}
+
+.step-label {
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--cyan);
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  opacity: 0.6;
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.gold-icon { color: var(--gold); }
+.cyan-icon { color: var(--cyan); }
+
+.framework-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.framework-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}

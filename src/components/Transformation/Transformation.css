@@ -1,0 +1,129 @@
+.case-study {
+  margin-bottom: 100px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card-bg);
+  transition: border-color 0.3s;
+}
+
+.case-study:hover {
+  border-color: var(--accent-solid);
+}
+
+.case-header {
+  padding: 2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.case-header h3 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+}
+
+.case-tag {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-solid);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.transformation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.column {
+  padding: 3rem;
+}
+
+.column.chaos {
+  border-right: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.column h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  margin-bottom: 2.5rem;
+}
+
+.item {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.icon-x { color: #ff4d4d; flex-shrink: 0; }
+.icon-check { color: #00ff88; flex-shrink: 0; }
+
+.item p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.gold-text-bold {
+  color: var(--accent-solid);
+  font-weight: 700;
+}
+
+/* AI Scanner Simulation */
+.ai-scanner {
+  margin-top: 3rem;
+  width: 100%;
+  height: 160px;
+  background: #000;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.scanner-line {
+  width: 100%;
+  height: 2px;
+  background: var(--accent-solid);
+  position: absolute;
+  top: 0;
+  animation: scan 4s infinite linear;
+  box-shadow: 0 0 15px var(--accent-solid);
+  z-index: 2;
+}
+
+.scanner-content {
+  padding: 20px;
+  color: #00ff88;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  position: relative;
+  z-index: 1;
+}
+
+.log-line {
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+@keyframes scan {
+  0% { top: 0; }
+  50% { top: 100%; }
+  100% { top: 0; }
+}
+
+@media (max-width: 992px) {
+  .transformation-grid {
+    grid-template-columns: 1fr;
+  }
+  .column.chaos {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}

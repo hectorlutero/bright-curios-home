@@ -1,0 +1,31 @@
+.cta-section {
+  padding: 8rem 0;
+}
+
+.cta-card {
+  padding: 6rem 4rem;
+  border-radius: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-color: var(--gold);
+}
+
+.cta-card h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 2rem;
+  line-height: 1;
+}
+
+.cta-card p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+}
