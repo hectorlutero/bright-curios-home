@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, ShieldAlert, DollarSign, Info } from 'lucide-react';
+import { Clock, ShieldAlert, DollarSign, TrendingUp, Info, CheckCircle2, ArrowDown } from 'lucide-react';
 import './Trap.css';
 
-const traps = [
+const chaosTraps = [
   {
     icon: <DollarSign className="trap-icon red" />,
     title: "The Talent Gap",
@@ -11,7 +11,7 @@ const traps = [
     tooltip: "Hidden: Recruiting (20%), Benefits, Equity, and 4-month ramp-up time.",
     cost: "$300k+",
     position: { top: '0%', left: '5%' },
-    width: '340px'
+    width: '320px'
   },
   {
     icon: <Clock className="trap-icon red" />,
@@ -19,8 +19,8 @@ const traps = [
     content: "A 12-month development cycle is a death sentence.",
     tooltip: "Market: Competitors shipping in <30 days capture 80% of early adopters.",
     cost: "1 Year Lost",
-    position: { top: '15%', left: '60%' },
-    width: '340px'
+    position: { top: '8%', left: '62%' },
+    width: '320px'
   },
   {
     icon: <ShieldAlert className="trap-icon red" />,
@@ -28,46 +28,65 @@ const traps = [
     content: "Public AI models leak trade secrets effortlessly.",
     tooltip: "Risk: Proprietary R&D data can be used to train future public models.",
     cost: "Data Risk",
-    position: { top: '45%', left: '12%' },
-    width: '340px'
+    position: { top: '30%', left: '10%' },
+    width: '320px'
   }
 ];
 
-const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
+const successSteps = [
+  {
+    icon: <TrendingUp className="trap-icon gold" />,
+    title: "The Bright Alternative",
+    content: "We deliver top 1% AI expertise and private infrastructure in < 30 days.",
+    tooltip: "ROI: Fixed cost, zero overhead, and immediate technical dominance.",
+    cost: "Optimized ROI",
+    type: "solution"
+  },
+  {
+    icon: <CheckCircle2 className="trap-icon cyan" />,
+    title: "Operational Stability",
+    content: "Post-implementation equilibrium with automated scaling.",
+    tooltip: "Result: Zero manual toil and 100% predictable operational margins.",
+    cost: "MAX PROFIT",
+    type: "stability"
+  }
+];
+
+const TrapCard = ({ item, index, isChaos = true }: { item: any, index: number, isChaos?: boolean }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
-      animate={{ 
-        y: [0, -10, 0],
-      }}
-      style={{ 
+      animate={isChaos ? { y: [0, -10, 0] } : {}}
+      style={isChaos ? { 
         position: 'absolute', 
-        ...trap.position,
-        width: trap.width,
+        ...item.position,
+        width: item.width,
         zIndex: isHovered ? 100 : 10 
-      }}
+      } : { width: '100%' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="trap-card glass-panel"
+      className={`trap-card glass-panel ${item.type || ''}`}
     >
       <div className="trap-notification-header">
         <div className="icon-wrapper">
-          {trap.icon}
+          {item.icon}
         </div>
         <div className="trap-header-info">
-          <span className="trap-title">{trap.title}</span>
-          <span className="trap-timestamp">CRITICAL ALERT</span>
+          <span className="trap-title">{item.title}</span>
+          <span className="trap-timestamp">
+            {isChaos ? 'CRITICAL ALERT' : (item.type === 'solution' ? 'READY' : 'STABLE')}
+          </span>
         </div>
-        <div className="trap-cost-badge">{trap.cost}</div>
+        <div className="trap-cost-badge">{item.cost}</div>
       </div>
       
       <div className="trap-content">
-        <p>{trap.content}</p>
+        <p>{item.content}</p>
       </div>
 
       <AnimatePresence>
@@ -79,14 +98,16 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
             className="trap-tooltip-refined"
           >
             <Info size={14} className="info-icon" />
-            <span>{trap.tooltip}</span>
+            <span>{item.tooltip}</span>
           </motion.div>
         )}
       </AnimatePresence>
 
       <div className="trap-footer">
-        <span className="action-text">Risk Analysis</span>
-        <div className="tap-indicator"></div>
+        <span className="action-text">
+          {isChaos ? 'Risk Analysis' : (item.type === 'solution' ? 'Order Established' : 'Profit Stream Active')}
+        </span>
+        <div className={`tap-indicator ${item.type === 'stability' ? 'success' : ''}`}></div>
       </div>
     </motion.div>
   );
@@ -94,21 +115,47 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
 
 const Trap: React.FC = () => {
   return (
-    <section className="trap-section">
-      <div className="trap-bg-accent"></div>
+    <section className="roadmap-section">
+      <div className="roadmap-bg-glow"></div>
+      
       <div className="container">
-        <div className="section-header center">
-          <span className="tag red">Hidden Costs</span>
-          <h2 className="section-title">The $100k <br />In-house Trap</h2>
-          <p className="section-subtitle">
-            Building internally is often the slowest and most expensive way to fail.
-          </p>
+        {/* GROUP 1: THE CHAOS */}
+        <div className="chaos-group">
+          <div className="section-header center">
+            <span className="tag red">Stage 01: The Risk</span>
+            <h2 className="section-title">The $100k <br />In-house Trap</h2>
+          </div>
+          <div className="chaos-scatter-container">
+            {chaosTraps.map((trap, index) => (
+              <TrapCard key={index} item={trap} index={index} isChaos={true} />
+            ))}
+          </div>
         </div>
 
-        <div className="trap-scatter-container">
-          {traps.map((trap, index) => (
-            <TrapCard key={index} trap={trap} index={index} />
-          ))}
+        {/* TRANSITION CONNECTOR */}
+        <div className="roadmap-connector">
+          <div className="connector-line"></div>
+          <motion.div 
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+            className="connector-arrow"
+          >
+            <ArrowDown size={32} />
+          </motion.div>
+          <span className="connector-label">Implementing Bright Intelligence</span>
+        </div>
+
+        {/* GROUP 2: THE ORDER */}
+        <div className="order-group">
+          <div className="section-header center">
+            <span className="tag cyan">Stage 02: The Impact</span>
+            <h2 className="section-title">Operational Excellence</h2>
+          </div>
+          <div className="order-grid">
+            {successSteps.map((step, index) => (
+              <TrapCard key={index} item={step} index={index} isChaos={false} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
