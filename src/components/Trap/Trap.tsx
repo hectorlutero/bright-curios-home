@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, ShieldAlert, DollarSign, TrendingUp, Info } from 'lucide-react';
+import { Clock, ShieldAlert, DollarSign, TrendingUp, Info, CheckCircle2 } from 'lucide-react';
 import './Trap.css';
 
 const traps = [
@@ -10,17 +10,17 @@ const traps = [
     content: "Elite AI engineers cost $300k+/year plus equity.",
     tooltip: "Includes: Recruiting fees (20%), Benefits, Equity dilution, and Training time.",
     cost: "$300k+",
-    position: { top: '0%', left: '0%' },
-    floatDuration: 6
+    position: { top: '5%', left: '5%' },
+    width: '320px'
   },
   {
     icon: <Clock className="trap-icon red" />,
     title: "The Speed Tax",
     content: "A 12-month development cycle is a death sentence.",
-    tooltip: "Market Advantage: Competitors shipping in <30 days will capture your market share before you launch.",
+    tooltip: "Market Advantage: Competitors shipping in <30 days will capture your market share.",
     cost: "1 Year Lost",
-    position: { top: '15%', left: '55%' },
-    floatDuration: 7
+    position: { top: '10%', left: '65%' },
+    width: '320px'
   },
   {
     icon: <ShieldAlert className="trap-icon red" />,
@@ -28,18 +28,28 @@ const traps = [
     content: "Public AI models leak trade secrets effortlessly.",
     tooltip: "Risk: Zero-day exploits in public API integrations can expose proprietary R&D data.",
     cost: "Data Risk",
-    position: { top: '50%', left: '10%' },
-    floatDuration: 5
+    position: { top: '55%', left: '2%' },
+    width: '320px'
   },
   {
     icon: <TrendingUp className="trap-icon gold" />,
     title: "The Bright Alternative",
-    content: "We deliver top 1% AI expertise in < 30 days.",
+    content: "We deliver top 1% AI expertise and private infrastructure in < 30 days.",
     tooltip: "ROI: Fixed cost, Zero overhead, Enterprise security, Immediate operational leverage.",
     cost: "Optimized ROI",
-    position: { top: '65%', left: '50%' },
-    floatDuration: 8,
+    position: { top: '25%', left: '50%', transform: 'translateX(-50%)' },
+    width: '460px',
     isSolution: true
+  },
+  {
+    icon: <CheckCircle2 className="trap-icon cyan" />,
+    title: "Operational Stability",
+    content: "Post-implementation equilibrium with automated scaling.",
+    tooltip: "Outcome: Predictable margins, consistent high-quality output, and zero manual toil.",
+    cost: "MAX PROFIT",
+    position: { top: '65%', left: '50%' },
+    width: '380px',
+    isStability: true
   }
 ];
 
@@ -53,17 +63,17 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
       animate={{ 
-        y: [0, -15, 0],
+        y: [0, -12, 0],
       }}
       style={{ 
         position: 'absolute', 
         ...trap.position,
-        width: '380px',
-        zIndex: isHovered ? 100 : 10 
+        width: trap.width,
+        zIndex: isHovered ? 100 : (trap.isSolution ? 50 : 10) 
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`trap-card glass-panel ${trap.isSolution ? 'solution' : ''}`}
+      className={`trap-card glass-panel ${trap.isSolution ? 'solution' : ''} ${trap.isStability ? 'stability' : ''}`}
     >
       <div className="trap-notification-header">
         <div className="icon-wrapper">
@@ -71,7 +81,9 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
         </div>
         <div className="trap-header-info">
           <span className="trap-title">{trap.title}</span>
-          <span className="trap-timestamp">CRITICAL ALERT</span>
+          <span className="trap-timestamp">
+            {trap.isStability ? 'SYSTEM STABLE' : (trap.isSolution ? 'SOLUTION READY' : 'CRITICAL ALERT')}
+          </span>
         </div>
         <div className="trap-cost-badge">{trap.cost}</div>
       </div>
@@ -95,7 +107,9 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
       </AnimatePresence>
 
       <div className="trap-footer">
-        <span className="action-text">{trap.isSolution ? 'Efficiency unlocked' : 'High exposure risk'}</span>
+        <span className="action-text">
+          {trap.isStability ? 'Profit stream active' : (trap.isSolution ? 'Order established' : 'High exposure risk')}
+        </span>
         <div className="tap-indicator"></div>
       </div>
     </motion.div>
