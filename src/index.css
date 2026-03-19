@@ -43,9 +43,27 @@ body {
   padding: 0 2rem;
 }
 
+h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
 }
 
 .gold-gradient {
