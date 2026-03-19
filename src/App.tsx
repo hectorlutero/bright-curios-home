@@ -2,6 +2,7 @@ import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import Framework from './components/Framework/Framework'
 import Trap from './components/Trap/Trap'
+import Impact from './components/Impact/Impact'
 import Carousel from './components/Carousel/Carousel'
 import Blog from './components/Blog/Blog'
 import Founders from './components/Founders/Founders'
@@ -23,6 +24,7 @@ function AppContent() {
         <Hero />
         <Framework />
         <Trap />
+        <Impact />
         <Carousel />
         <Blog />
         <Security />

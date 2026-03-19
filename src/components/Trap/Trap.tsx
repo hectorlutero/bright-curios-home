@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Clock, ShieldAlert, DollarSign, TrendingUp, Info, CheckCircle2 } from 'lucide-react';
+import { Clock, ShieldAlert, DollarSign, Info } from 'lucide-react';
 import './Trap.css';
 
 const traps = [
@@ -19,7 +19,7 @@ const traps = [
     content: "A 12-month development cycle is a death sentence.",
     tooltip: "Market: Competitors shipping in <30 days capture 80% of early adopters.",
     cost: "1 Year Lost",
-    position: { top: '15%', left: '62%' },
+    position: { top: '15%', left: '60%' },
     width: '340px'
   },
   {
@@ -28,28 +28,8 @@ const traps = [
     content: "Public AI models leak trade secrets effortlessly.",
     tooltip: "Risk: Proprietary R&D data can be used to train future public models.",
     cost: "Data Risk",
-    position: { top: '35%', left: '8%' },
+    position: { top: '45%', left: '12%' },
     width: '340px'
-  },
-  {
-    icon: <TrendingUp className="trap-icon gold" />,
-    title: "The Bright Alternative",
-    content: "We deliver top 1% AI expertise and private infrastructure in < 30 days.",
-    tooltip: "ROI: Fixed cost, zero overhead, and immediate technical dominance.",
-    cost: "Optimized ROI",
-    position: { top: '58%', left: '50%', transform: 'translateX(-50%)' },
-    width: '480px',
-    isSolution: true
-  },
-  {
-    icon: <CheckCircle2 className="trap-icon cyan" />,
-    title: "Operational Stability",
-    content: "Post-implementation equilibrium with automated scaling.",
-    tooltip: "Result: Zero manual toil and 100% predictable operational margins.",
-    cost: "MAX PROFIT",
-    position: { top: '82%', left: '50%', transform: 'translateX(-50%)' },
-    width: '420px',
-    isStability: true
   }
 ];
 
@@ -69,11 +49,11 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
         position: 'absolute', 
         ...trap.position,
         width: trap.width,
-        zIndex: isHovered ? 100 : (trap.isSolution || trap.isStability ? 50 : 10) 
+        zIndex: isHovered ? 100 : 10 
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`trap-card glass-panel ${trap.isSolution ? 'solution' : ''} ${trap.isStability ? 'stability' : ''}`}
+      className="trap-card glass-panel"
     >
       <div className="trap-notification-header">
         <div className="icon-wrapper">
@@ -81,9 +61,7 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
         </div>
         <div className="trap-header-info">
           <span className="trap-title">{trap.title}</span>
-          <span className="trap-timestamp">
-            {trap.isStability ? 'SYSTEM STABLE' : (trap.isSolution ? 'READY' : 'CRITICAL')}
-          </span>
+          <span className="trap-timestamp">CRITICAL ALERT</span>
         </div>
         <div className="trap-cost-badge">{trap.cost}</div>
       </div>
@@ -107,9 +85,7 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
       </AnimatePresence>
 
       <div className="trap-footer">
-        <span className="action-text">
-          {trap.isStability ? 'Profit Stream Active' : (trap.isSolution ? 'Order Established' : 'Risk Analysis')}
-        </span>
+        <span className="action-text">Risk Analysis</span>
         <div className="tap-indicator"></div>
       </div>
     </motion.div>
