@@ -23,20 +23,23 @@
 
 .framework-card:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(253, 224, 71, 0.3);
+  border-color: var(--gold);
+  box-shadow: 0 0 30px rgba(253, 224, 71, 0.15), inset 0 0 20px rgba(253, 224, 71, 0.05);
 }
 
 [data-theme='light'] .framework-card:hover {
-  background: rgba(0, 0, 0, 0.035);
-  border-color: rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: var(--gold);
+  box-shadow: 0 10px 40px rgba(202, 138, 4, 0.15), inset 0 0 20px rgba(202, 138, 4, 0.05);
 }
 
 [data-theme='light'] .framework-card:hover .icon-box {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(202, 138, 4, 0.05);
+  border-color: rgba(202, 138, 4, 0.2);
 }
 
 [data-theme='light'] .framework-card:hover h3 {
-  color: #000;
+  color: var(--gold);
 }
 
 .step-label {
