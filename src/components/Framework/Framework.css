@@ -26,6 +26,19 @@
   border-color: rgba(253, 224, 71, 0.3);
 }
 
+[data-theme='light'] .framework-card:hover {
+  background: rgba(0, 0, 0, 0.035);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='light'] .framework-card:hover .icon-box {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='light'] .framework-card:hover h3 {
+  color: #000;
+}
+
 .step-label {
   font-family: ui-monospace, monospace;
   font-size: 0.75rem;
