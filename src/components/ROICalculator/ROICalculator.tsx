@@ -115,7 +115,15 @@ const ROICalculator: React.FC = () => {
 
               {currentStep === 3 && (
                 <div className="roi-output-minimal">
-                  <h3 className="gold-gradient">${yearlySavings.toLocaleString()}</h3>
+                  <motion.h3 
+                    className="gold-gradient"
+                    animate={{ 
+                      scale: [1, 1.02, 1],
+                      transition: { duration: 2, repeat: Infinity }
+                    }}
+                  >
+                    ${yearlySavings.toLocaleString()}
+                  </motion.h3>
                   <p className="roi-disclaimer">
                     *Based on 80% automation efficiency delivered by Bright Curios.
                   </p>
@@ -124,7 +132,7 @@ const ROICalculator: React.FC = () => {
             </div>
 
             <div className="roi-actions">
-              {currentStep > 0 && (
+              {currentStep > 0 && currentStep < 3 && (
                 <button className="roi-btn-secondary" onClick={prevStep}>
                   ← Back
                 </button>
@@ -134,9 +142,14 @@ const ROICalculator: React.FC = () => {
                   {currentStep === 2 ? 'See Results →' : 'Continue Audit →'}
                 </button>
               ) : (
-                <button className="roi-btn-primary" onClick={resetAudit}>
-                  Adjust Parameters
-                </button>
+                <div className="roi-final-actions">
+                  <a href="#strategy" className="roi-btn-primary" style={{ textDecoration: 'none' }}>
+                    Book Strategy Call
+                  </a>
+                  <button className="roi-btn-secondary" onClick={resetAudit}>
+                    Adjust Parameters
+                  </button>
+                </div>
               )}
             </div>
           </motion.div>

@@ -180,6 +180,20 @@
   align-items: center;
 }
 
+.roi-final-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .roi-final-actions {
+    flex-direction: column;
+  }
+}
+
 .roi-btn-primary, .roi-btn-secondary {
   padding: 1.25rem 2.5rem;
   border-radius: 100px;
@@ -189,6 +203,15 @@
   letter-spacing: 1px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .roi-btn-primary, .roi-btn-secondary {
+    width: 100%;
+  }
 }
 
 .roi-btn-primary {
