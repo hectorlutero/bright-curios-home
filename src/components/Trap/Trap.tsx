@@ -8,47 +8,47 @@ const traps = [
     icon: <DollarSign className="trap-icon red" />,
     title: "The Talent Gap",
     content: "Elite AI engineers cost $300k+/year plus equity.",
-    tooltip: "Includes: Recruiting fees (20%), Benefits, Equity dilution, and Training time.",
+    tooltip: "Hidden: Recruiting (20%), Benefits, Equity, and 4-month ramp-up time.",
     cost: "$300k+",
-    position: { top: '0%', left: '10%' },
-    width: '320px'
+    position: { top: '0%', left: '5%' },
+    width: '340px'
   },
   {
     icon: <Clock className="trap-icon red" />,
     title: "The Speed Tax",
     content: "A 12-month development cycle is a death sentence.",
-    tooltip: "Market Advantage: Competitors shipping in <30 days will capture your market share.",
+    tooltip: "Market: Competitors shipping in <30 days capture 80% of early adopters.",
     cost: "1 Year Lost",
-    position: { top: '5%', left: '60%' },
-    width: '320px'
+    position: { top: '15%', left: '62%' },
+    width: '340px'
   },
   {
     icon: <ShieldAlert className="trap-icon red" />,
     title: "The Privacy Leak",
     content: "Public AI models leak trade secrets effortlessly.",
-    tooltip: "Risk: Zero-day exploits in public API integrations can expose proprietary R&D data.",
+    tooltip: "Risk: Proprietary R&D data can be used to train future public models.",
     cost: "Data Risk",
-    position: { top: '25%', left: '5%' },
-    width: '320px'
+    position: { top: '35%', left: '8%' },
+    width: '340px'
   },
   {
     icon: <TrendingUp className="trap-icon gold" />,
     title: "The Bright Alternative",
     content: "We deliver top 1% AI expertise and private infrastructure in < 30 days.",
-    tooltip: "ROI: Fixed cost, Zero overhead, Enterprise security, Immediate operational leverage.",
+    tooltip: "ROI: Fixed cost, zero overhead, and immediate technical dominance.",
     cost: "Optimized ROI",
-    position: { top: '50%', left: '50%', transform: 'translateX(-50%)' },
-    width: '460px',
+    position: { top: '58%', left: '50%', transform: 'translateX(-50%)' },
+    width: '480px',
     isSolution: true
   },
   {
     icon: <CheckCircle2 className="trap-icon cyan" />,
     title: "Operational Stability",
     content: "Post-implementation equilibrium with automated scaling.",
-    tooltip: "Outcome: Predictable margins, consistent high-quality output, and zero manual toil.",
+    tooltip: "Result: Zero manual toil and 100% predictable operational margins.",
     cost: "MAX PROFIT",
-    position: { top: '78%', left: '50%', transform: 'translateX(-50%)' },
-    width: '400px',
+    position: { top: '82%', left: '50%', transform: 'translateX(-50%)' },
+    width: '420px',
     isStability: true
   }
 ];
@@ -58,12 +58,12 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
+      initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
       animate={{ 
-        y: [0, -12, 0],
+        y: [0, -10, 0],
       }}
       style={{ 
         position: 'absolute', 
@@ -82,7 +82,7 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
         <div className="trap-header-info">
           <span className="trap-title">{trap.title}</span>
           <span className="trap-timestamp">
-            {trap.isStability ? 'SYSTEM STABLE' : (trap.isSolution ? 'SOLUTION READY' : 'CRITICAL ALERT')}
+            {trap.isStability ? 'SYSTEM STABLE' : (trap.isSolution ? 'READY' : 'CRITICAL')}
           </span>
         </div>
         <div className="trap-cost-badge">{trap.cost}</div>
@@ -95,20 +95,20 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
       <AnimatePresence>
         {isHovered && (
           <motion.div 
-            initial={{ opacity: 0, y: 10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="trap-tooltip"
+            initial={{ opacity: 0, x: 20, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: 20, scale: 0.95 }}
+            className="trap-tooltip-refined"
           >
             <Info size={14} className="info-icon" />
-            <p>{trap.tooltip}</p>
+            <span>{trap.tooltip}</span>
           </motion.div>
         )}
       </AnimatePresence>
 
       <div className="trap-footer">
         <span className="action-text">
-          {trap.isStability ? 'Profit stream active' : (trap.isSolution ? 'Order established' : 'High exposure risk')}
+          {trap.isStability ? 'Profit Stream Active' : (trap.isSolution ? 'Order Established' : 'Risk Analysis')}
         </span>
         <div className="tap-indicator"></div>
       </div>
