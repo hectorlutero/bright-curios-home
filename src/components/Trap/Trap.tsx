@@ -10,7 +10,7 @@ const traps = [
     content: "Elite AI engineers cost $300k+/year plus equity.",
     tooltip: "Includes: Recruiting fees (20%), Benefits, Equity dilution, and Training time.",
     cost: "$300k+",
-    position: { top: '5%', left: '5%' },
+    position: { top: '0%', left: '10%' },
     width: '320px'
   },
   {
@@ -19,7 +19,7 @@ const traps = [
     content: "A 12-month development cycle is a death sentence.",
     tooltip: "Market Advantage: Competitors shipping in <30 days will capture your market share.",
     cost: "1 Year Lost",
-    position: { top: '10%', left: '65%' },
+    position: { top: '5%', left: '60%' },
     width: '320px'
   },
   {
@@ -28,7 +28,7 @@ const traps = [
     content: "Public AI models leak trade secrets effortlessly.",
     tooltip: "Risk: Zero-day exploits in public API integrations can expose proprietary R&D data.",
     cost: "Data Risk",
-    position: { top: '55%', left: '2%' },
+    position: { top: '25%', left: '5%' },
     width: '320px'
   },
   {
@@ -37,7 +37,7 @@ const traps = [
     content: "We deliver top 1% AI expertise and private infrastructure in < 30 days.",
     tooltip: "ROI: Fixed cost, Zero overhead, Enterprise security, Immediate operational leverage.",
     cost: "Optimized ROI",
-    position: { top: '25%', left: '50%', transform: 'translateX(-50%)' },
+    position: { top: '50%', left: '50%', transform: 'translateX(-50%)' },
     width: '460px',
     isSolution: true
   },
@@ -47,8 +47,8 @@ const traps = [
     content: "Post-implementation equilibrium with automated scaling.",
     tooltip: "Outcome: Predictable margins, consistent high-quality output, and zero manual toil.",
     cost: "MAX PROFIT",
-    position: { top: '65%', left: '50%' },
-    width: '380px',
+    position: { top: '78%', left: '50%', transform: 'translateX(-50%)' },
+    width: '400px',
     isStability: true
   }
 ];
@@ -69,7 +69,7 @@ const TrapCard = ({ trap, index }: { trap: any, index: number }) => {
         position: 'absolute', 
         ...trap.position,
         width: trap.width,
-        zIndex: isHovered ? 100 : (trap.isSolution ? 50 : 10) 
+        zIndex: isHovered ? 100 : (trap.isSolution || trap.isStability ? 50 : 10) 
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
