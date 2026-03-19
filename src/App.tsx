@@ -1,7 +1,7 @@
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import Framework from './components/Framework/Framework'
-import Accordion from './components/Accordion/Accordion'
+import Trap from './components/Trap/Trap'
 import Carousel from './components/Carousel/Carousel'
 import Blog from './components/Blog/Blog'
 import Founders from './components/Founders/Founders'
@@ -22,7 +22,7 @@ function AppContent() {
       <main>
         <Hero />
         <Framework />
-        <Accordion />
+        <Trap />
         <Carousel />
         <Blog />
         <Security />
