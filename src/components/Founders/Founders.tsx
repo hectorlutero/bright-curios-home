@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Founders.css';
 import hectorImg from '../../assets/founders/hector.png';
 import rafaelImg from '../../assets/founders/rafael.png';
