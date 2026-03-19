@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, TrendingUp, Clock, Shield, Cpu, Activity, Layout, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, TrendingUp, Clock, Cpu, Activity, Layout, ArrowRight } from 'lucide-react';
 import './Carousel.css';
 
 const cases = [
@@ -68,8 +68,6 @@ const Carousel: React.FC = () => {
             <div className="slider-track" style={{ transform: `translateX(-${currentIndex * (720 + 48)}px)` }}>
               {cases.map((item, index) => {
                 const isActive = index === currentIndex;
-                const isNext = index > currentIndex;
-                const isPrev = index < currentIndex;
 
                 return (
                   <motion.div 
@@ -77,9 +75,9 @@ const Carousel: React.FC = () => {
                     className={`slide glass-panel ${isActive ? 'active' : 'peek'}`}
                     initial={false}
                     animate={{ 
-                      rotateY: isActive ? 0 : (isNext ? 35 : -35),
+                      rotateY: isActive ? 0 : (index > currentIndex ? 35 : -35),
                       z: isActive ? 0 : -300,
-                      x: isActive ? 0 : (isNext ? 50 : -50),
+                      x: isActive ? 0 : (index > currentIndex ? 50 : -50),
                       scale: isActive ? 1 : 0.8,
                       opacity: isActive ? 1 : 0.2,
                     }}
