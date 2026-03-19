@@ -245,7 +245,7 @@
   left: 20px;
   right: 20px;
   background: #ef4444;
-  color: white;
+  color: #fff;
   padding: 1.25rem;
   border-radius: 18px;
   font-size: 0.9rem;
@@ -259,17 +259,18 @@
 
 [data-theme='light'] .trap-tooltip {
   background: #b91c1c;
+  color: #fff;
 }
 
 .solution .trap-tooltip {
   background: var(--gold);
-  color: black;
+  color: #fff;
   box-shadow: 0 15px 30px rgba(253, 224, 71, 0.4);
 }
 
 .stability .trap-tooltip {
   background: var(--cyan);
-  color: black;
+  color: #fff;
   box-shadow: 0 15px 30px rgba(34, 211, 238, 0.4);
 }
 
