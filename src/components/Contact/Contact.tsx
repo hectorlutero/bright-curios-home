@@ -1,12 +1,18 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Mail, MessageSquare, ArrowRight } from 'lucide-react';
-import './Contact.tsx'; // Correcting the import below
 import './Contact.css';
 
 const Contact: React.FC = () => {
   return (
     <section className="contact-section container" id="strategy">
-      <div className="contact-card glass-panel">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="contact-card glass-panel"
+      >
         <div className="contact-grid">
           <div className="contact-info">
             <span className="tag cyan">Direct Access</span>
@@ -27,7 +33,13 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div className="contact-form-area">
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="contact-form-area"
+          >
             <form className="diagnosis-form">
               <div className="form-group">
                 <label>Full Name</label>
@@ -45,9 +57,9 @@ const Contact: React.FC = () => {
                 Request Diagnosis <ArrowRight size={18} />
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

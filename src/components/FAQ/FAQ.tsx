@@ -27,14 +27,26 @@ const FAQ: React.FC = () => {
 
   return (
     <section className="faq-section container">
-      <div className="section-header">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="section-header"
+      >
         <span className="tag gold">Intelligence Base</span>
         <h2>Frequently Asked Questions</h2>
-      </div>
+      </motion.div>
 
       <div className="faq-grid">
         {faqItems.map((item, index) => (
-          <div key={index} className={`faq-item glass-panel ${openIndex === index ? 'active' : ''}`}>
+          <motion.div 
+            key={index} 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            className={`faq-item glass-panel ${openIndex === index ? 'active' : ''}`}
+          >
             <button className="faq-header" onClick={() => setOpenIndex(openIndex === index ? null : index)}>
               <span>{item.q}</span>
               {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
@@ -51,7 +63,7 @@ const FAQ: React.FC = () => {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

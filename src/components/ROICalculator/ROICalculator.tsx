@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './ROICalculator.css';
 
 const ROICalculator: React.FC = () => {
@@ -11,7 +12,13 @@ const ROICalculator: React.FC = () => {
 
   return (
     <section className="roi-section container">
-      <div className="roi-card glass-panel">
+      <motion.div 
+        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="roi-card glass-panel"
+      >
         <div className="roi-header">
           <span className="tag">Financial Terminal</span>
           <h2>Calculate Your AI Leverage</h2>
@@ -68,7 +75,7 @@ const ROICalculator: React.FC = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

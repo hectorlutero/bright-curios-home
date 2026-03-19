@@ -8,7 +8,13 @@ const Founders: React.FC = () => {
     <section className="founders-section container">
       <h2 className="section-title">The Founders</h2>
       <div className="founders-grid">
-        <div className="founder-card glass-panel">
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="founder-card glass-panel"
+        >
           <div className="founder-image-wrapper">
             <img src={rafaelImg} alt="Rafael Figueiredo" className="founder-image" />
           </div>
@@ -19,9 +25,15 @@ const Founders: React.FC = () => {
               Visionary strategist focused on identifying high-ROI opportunities and steering large-scale business operations.
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="founder-card glass-panel">
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="founder-card glass-panel"
+        >
           <div className="founder-image-wrapper">
             <img src={hectorImg} alt="Hector Siman" className="founder-image" />
           </div>
@@ -32,7 +44,7 @@ const Founders: React.FC = () => {
               Multi-Agent systems specialist and operational AI expert leading the technical architecture and engineering of high-velocity products.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

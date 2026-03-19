@@ -42,7 +42,13 @@ const Carousel: React.FC = () => {
   return (
     <section className="carousel-section">
       <div className="carousel-outer-wrapper">
-        <div className="carousel-info-panel">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="carousel-info-panel"
+        >
           <div className="info-content">
             <span className="tag cyan">Success Stories</span>
             <h2 className="section-title">Business <br />Transformation</h2>
@@ -61,7 +67,7 @@ const Carousel: React.FC = () => {
               <span className="total">0{cases.length}</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <div className="slider-main-container">
           <div className="slider-perspective">
