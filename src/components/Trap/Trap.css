@@ -26,11 +26,12 @@
 }
 
 [data-theme='light'] .trap-section::before {
+  width: 3px;
   background: linear-gradient(to bottom, 
     transparent, 
-    rgba(185, 28, 28, 0.1) 10%, 
-    rgba(161, 98, 7, 0.25) 50%, 
-    rgba(8, 145, 178, 0.2) 90%, 
+    rgba(185, 28, 28, 0.15) 10%, 
+    rgba(202, 138, 4, 0.3) 50%, 
+    rgba(8, 145, 178, 0.3) 90%, 
     transparent
   );
 }
@@ -82,19 +83,15 @@
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(15, 23, 42, 0.8) !important;
+  background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(30px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme='light'] .trap-card {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255, 255, 255, 0.95);
   border-color: rgba(0, 0, 0, 0.08);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-}
-
-[data-theme='light'] .trap-card:hover {
-  border-color: rgba(185, 28, 28, 0.3);
 }
 
 .trap-card:hover {
@@ -102,11 +99,20 @@
   transform: scale(1.02) translateY(-5px);
 }
 
+[data-theme='light'] .trap-card:hover {
+  border-color: rgba(185, 28, 28, 0.3);
+}
+
 /* SOLUTION EMPHASIS (GOLD) */
 .trap-card.solution {
-  background: linear-gradient(135deg, rgba(253, 224, 71, 0.15), rgba(15, 23, 42, 0.9)) !important;
+  background: linear-gradient(135deg, rgba(253, 224, 71, 0.15), rgba(15, 23, 42, 0.9));
   border-color: rgba(253, 224, 71, 0.6);
   box-shadow: 0 0 60px rgba(253, 224, 71, 0.15);
+}
+
+[data-theme='light'] .trap-card.solution {
+  background: linear-gradient(135deg, rgba(253, 224, 71, 0.1), rgba(255, 255, 255, 0.95));
+  border-color: rgba(202, 138, 4, 0.4);
 }
 
 .trap-card.solution:hover {
@@ -116,8 +122,13 @@
 
 /* STABILITY CARD (CYAN) */
 .trap-card.stability {
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(15, 23, 42, 0.9)) !important;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(15, 23, 42, 0.9));
   border-color: rgba(34, 211, 238, 0.5);
+}
+
+[data-theme='light'] .trap-card.stability {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.08), rgba(255, 255, 255, 0.95));
+  border-color: rgba(8, 145, 178, 0.4);
 }
 
 .trap-card.stability:hover {
@@ -142,6 +153,11 @@
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='light'] .icon-wrapper {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.05);
 }
 
 .trap-icon.red { color: #ef4444; }
@@ -241,6 +257,10 @@
   z-index: 110;
 }
 
+[data-theme='light'] .trap-tooltip {
+  background: #b91c1c;
+}
+
 .solution .trap-tooltip {
   background: var(--gold);
   color: black;
@@ -266,6 +286,10 @@
   padding-top: 1.25rem;
   margin-top: 1.25rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='light'] .trap-footer {
+  border-top-color: rgba(0, 0, 0, 0.05);
 }
 
 .action-text {
