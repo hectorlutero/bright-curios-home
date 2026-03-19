@@ -100,9 +100,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .glass-panel {
   background: var(--glass);
-  backdrop-filter: var(--glass-blur) saturate(180%);
-  -webkit-backdrop-filter: var(--glass-blur) saturate(180%);
+  backdrop-filter: var(--glass-blur) saturate(180%) brightness(100%);
+  -webkit-backdrop-filter: var(--glass-blur) saturate(180%) brightness(100%);
   border: 1px solid var(--border);
   border-radius: 24px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  isolation: isolate; /* Create new stacking context for filter */
 }
