@@ -51,6 +51,13 @@ const ROICalculator: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="roi-card glass-panel"
       >
+        <div className="roi-progress-bar">
+          <motion.div 
+            className="progress-fill"
+            initial={{ width: 0 }}
+            animate={{ width: `${((currentStep + 1) / 4) * 100}%` }}
+          />
+        </div>
         <AnimatePresence mode="wait">
           <motion.div 
             key={currentStep}
