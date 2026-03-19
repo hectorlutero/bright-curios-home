@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
               <a href="#services">Services</a>
               <a href="#method">Methodology</a>
               <a href="#cases">Cases</a>
-              <a href="https://blog.brightcurios.com">Blog</a>
+              <a href="#blog">Blog</a>
             </div>
             <div className="link-group">
               <h4>Products</h4>

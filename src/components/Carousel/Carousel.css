@@ -22,7 +22,7 @@
 .carousel-info-panel {
   width: 450px;
   flex-shrink: 0;
-  padding-right: 4rem;
+  padding-right: 8rem;
   z-index: 50;
   background: transparent;
   position: relative;
@@ -49,14 +49,12 @@
   flex-grow: 1;
   overflow: visible;
   position: relative;
-  mask-image: linear-gradient(to right, transparent, black 150px);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 150px);
 }
 
 .slider-perspective {
   perspective: 2000px;
   width: 100%;
-  padding-left: 20px;
+  padding-left: 60px;
   transform-style: preserve-3d;
 }
 

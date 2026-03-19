@@ -24,7 +24,7 @@ const Header: React.FC = () => {
             <a href="#services" className="nav-link">Services</a>
             <a href="#method" className="nav-link">Methodology</a>
             <a href="#cases" className="nav-link">Cases</a>
-            <a href="https://blog.brightcurios.com" className="nav-link">Blog</a>
+            <a href="#blog" className="nav-link">Blog</a>
           </nav>
 
           <div className="header-actions">

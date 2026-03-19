@@ -3,6 +3,7 @@ import Hero from './components/Hero/Hero'
 import Framework from './components/Framework/Framework'
 import Accordion from './components/Accordion/Accordion'
 import Carousel from './components/Carousel/Carousel'
+import Blog from './components/Blog/Blog'
 import Founders from './components/Founders/Founders'
 import Security from './components/Security/Security'
 import ROICalculator from './components/ROICalculator/ROICalculator'
@@ -23,6 +24,7 @@ function AppContent() {
         <Framework />
         <Accordion />
         <Carousel />
+        <Blog />
         <Security />
         <ROICalculator />
         <Founders />

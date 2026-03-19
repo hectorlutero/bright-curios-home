@@ -1,8 +1,14 @@
 .footer-wrapper {
   padding: 8rem 0 4rem;
   border-top: 1px solid var(--border);
-  background: linear-gradient(to bottom, transparent, rgba(var(--gold-rgb), 0.02));
+  background: linear-gradient(to bottom, var(--navy), rgba(10, 15, 28, 1));
   margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme='light'] .footer-wrapper {
+  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
 }
 
 .footer-content {
@@ -10,6 +16,8 @@
   grid-template-columns: 1.2fr 2fr;
   gap: 6rem;
   margin-bottom: 6rem;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 1024px) {
@@ -20,7 +28,7 @@
 }
 
 .footer-logo {
-  height: 32px;
+  height: 80px;
   width: auto;
   margin-bottom: 2rem;
 }
