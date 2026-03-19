@@ -14,16 +14,16 @@
 
 .roi-card {
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 5rem;
+  padding: 4rem;
   border-radius: 40px;
   background: var(--glass);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--border);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
-  min-height: 600px;
+  min-height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,9 +56,42 @@
 
 @media (max-width: 640px) {
   .roi-card {
-    padding: 2.5rem 1.5rem;
+    padding: 2rem 1.5rem;
     border-radius: 24px;
-    min-height: 450px;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 360px) {
+  .roi-card {
+    padding: 1.5rem 1.25rem;
+    min-height: auto;
+  }
+  
+  .roi-header {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .roi-main {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .roi-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .step-context {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .roi-output-minimal h3 {
+    font-size: 2.5rem !important;
+  }
+
+  .roi-btn-primary, .roi-btn-secondary {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -82,7 +115,7 @@
 }
 
 .roi-header h2 {
-  font-size: clamp(1.875rem, 5vw, 2.5rem);
+  font-size: clamp(1.875rem, 4vw, 3rem);
   margin-top: 1.5rem;
   color: var(--text-primary);
   line-height: 1.2;
@@ -91,12 +124,21 @@
 .step-context {
   margin-top: 1rem;
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
   opacity: 0.7;
+}
+
+@media (min-width: 1440px) {
+  .roi-header h2 {
+    font-size: 3.5rem;
+  }
+  .step-context {
+    font-size: 1.25rem;
+  }
 }
 
 .roi-main {
