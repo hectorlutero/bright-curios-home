@@ -5,21 +5,21 @@ import './ROICalculator.css';
 const STEPS = [
   {
     id: 'scale',
-    tag: 'Step 1: Capacity',
+    tag: 'Step 1: Scale',
     question: 'How many people are on your team?',
     context: 'Most teams lose 40% of their potential to tasks that AI could handle in seconds.',
   },
   {
     id: 'resource',
-    tag: 'Step 2: Valuation',
+    tag: 'Step 2: Resource',
     question: 'What is the average hourly cost?',
     context: 'Include benefits and overhead to find the true price of manual bottlenecks.',
   },
   {
     id: 'waste',
-    tag: 'Step 3: Inefficiency',
+    tag: 'Step 3: Waste',
     question: 'How many hours are lost to manual work?',
-    context: 'Enter the average weekly hours per employee spent on repetitive, data-heavy tasks.',
+    context: 'Every hour lost to manual data entry is an hour stolen from strategic growth and high-value work.',
   },
   {
     id: 'reveal',

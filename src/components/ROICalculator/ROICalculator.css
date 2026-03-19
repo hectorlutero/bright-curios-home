@@ -82,7 +82,7 @@
 }
 
 .roi-header h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.875rem, 5vw, 2.5rem);
   margin-top: 1.5rem;
   color: var(--text-primary);
   line-height: 1.2;
@@ -96,6 +96,7 @@
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
+  opacity: 0.7;
 }
 
 .roi-main {
@@ -117,9 +118,16 @@
   display: flex;
   justify-content: space-between;
   font-weight: 700;
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
   color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .input-group label {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
 }
 
 .input-group label span {
@@ -151,6 +159,14 @@
   box-shadow: 0 0 20px rgba(var(--gold-rgb, 253, 224, 71), 0.4);
   border: 4px solid var(--navy);
   transition: transform 0.2s ease;
+}
+
+@media (max-width: 640px) {
+  .input-group input[type="range"]::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+    border-width: 3px;
+  }
 }
 
 .input-group input[type="range"]::-webkit-slider-thumb:hover {
