@@ -29,7 +29,8 @@
 
 .footer-logo {
   height: 80px;
-  width: auto;
+  width: 52%;
+  object-fit: cover;
   margin-bottom: 2rem;
 }
 
