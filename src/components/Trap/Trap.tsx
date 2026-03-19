@@ -42,8 +42,8 @@ const traps = [
     content: "We deliver top 1% AI expertise and private infrastructure in < 30 days.",
     tooltip: "ROI: Fixed cost, Zero overhead, Enterprise security, Immediate operational leverage.",
     cost: "Optimized ROI",
-    position: { top: '70%', left: '50%', transform: 'translateX(-50%)' },
-    width: '480px',
+    position: { top: '70%', left: '25%' },
+    width: '50%',
     isSolution: true
   },
   {
@@ -52,8 +52,8 @@ const traps = [
     content: "Post-implementation equilibrium with automated scaling and predictable margins.",
     tooltip: "Outcome: Predictable margins, consistent high-quality output, and zero manual toil.",
     cost: <span>MAX <span style={{ color: '#22c55e' }}>PROFIT</span></span>,
-    position: { top: '95%', left: '50%', transform: 'translateX(-50%)' },
-    width: '420px',
+    position: { top: '95%', left: '25%' },
+    width: '50%',
     isStability: true
   }
 ];
