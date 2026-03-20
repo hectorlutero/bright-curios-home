@@ -131,6 +131,10 @@
     animation: rotateCube3 200s infinite linear;
 }
 
+@media (max-width: 768px) {
+    .c4, .c5 { display: none !important; }
+}
+
 .c4 {
     bottom: 15%;
     right: 15%;
