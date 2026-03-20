@@ -35,9 +35,24 @@ const cases = [
 
 const Carousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+
+  React.useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % cases.length);
   const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + cases.length) % cases.length);
+
+  // Responsive step size: 720px + 48px gap for desktop, (windowWidth - 3rem) + 20px gap for mobile
+  const getStepSize = () => {
+    if (windowWidth <= 768) {
+      return (windowWidth - (1.5 * 16 * 2)) + 20; 
+    }
+    return 720 + 48;
+  };
 
   return (
     <section className="carousel-section">
@@ -71,7 +86,7 @@ const Carousel: React.FC = () => {
 
         <div className="slider-main-container">
           <div className="slider-perspective">
-            <div className="slider-track" style={{ transform: `translateX(-${currentIndex * (720 + 48)}px)` }}>
+            <div className="slider-track" style={{ transform: `translateX(-${currentIndex * getStepSize()}px)` }}>
               {cases.map((item, index) => {
                 const isActive = index === currentIndex;
 

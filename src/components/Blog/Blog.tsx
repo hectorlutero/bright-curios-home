@@ -36,30 +36,38 @@ const Blog: React.FC = () => {
           <h2 className="section-title">Latest from <br />Bright Curios</h2>
         </div>
 
-        <div className="blog-grid">
-          {posts.map((post, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="blog-card"
-            >
-              <div className="blog-image">
-                <img src={post.image} alt={post.title} />
-              </div>
-              <div className="blog-meta">
-                <span className="blog-category">{post.category}</span>
-                <h3>{post.title}</h3>
-                <p className="blog-excerpt">{post.excerpt}</p>
-                <div className="blog-footer">
-                  <span className="read-more">Read Entry <ArrowRight size={16} /></span>
-                  <span className="blog-date">{post.date}</span>
+        <div className="blog-grid-container">
+          <motion.div 
+            className="blog-grid"
+            drag="x"
+            dragConstraints={{ right: 0, left: -600 }}
+            dragElastic={0.2}
+            whileTap={{ cursor: "grabbing" }}
+          >
+            {posts.map((post, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="blog-card"
+              >
+                <div className="blog-image">
+                  <img src={post.image} alt={post.title} />
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <div className="blog-meta">
+                  <span className="blog-category">{post.category}</span>
+                  <h3>{post.title}</h3>
+                  <p className="blog-excerpt">{post.excerpt}</p>
+                  <div className="blog-footer">
+                    <span className="read-more">Read Entry <ArrowRight size={16} /></span>
+                    <span className="blog-date">{post.date}</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

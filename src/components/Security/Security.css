@@ -2,6 +2,12 @@
   padding: 10rem 0;
 }
 
+@media (max-width: 768px) {
+  .security-section {
+    padding: 6rem 0;
+  }
+}
+
 .security-bento {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -9,8 +15,18 @@
   margin-top: 4rem;
 }
 
+@media (max-width: 640px) {
+  .security-bento {
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .security-bento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-template-columns: 1fr;
   }
 }
@@ -21,6 +37,16 @@
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .security-card {
+    padding: 2rem;
+    border-radius: 24px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
 
 .security-card:hover {
@@ -37,6 +63,14 @@
   margin-bottom: 2.5rem;
 }
 
+@media (max-width: 640px) {
+  .icon-pills {
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
 .icon-pills .pill {
   padding: 0.5rem 1rem;
   background: rgba(255, 255, 255, 0.05);
@@ -50,10 +84,24 @@
   color: var(--text-secondary);
 }
 
+@media (max-width: 640px) {
+  .icon-pills .pill {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+}
+
 .security-card h3 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   line-height: 1.1;
+}
+
+@media (max-width: 640px) {
+  .security-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .security-card p {
@@ -61,6 +109,13 @@
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+  .security-card p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .security-footer {
