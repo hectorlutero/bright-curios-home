@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight, RefreshCcw, Calendar } from 'lucide-react';
 import './ROICalculator.css';
 
 const STEPS = [
@@ -51,13 +52,15 @@ const ROICalculator: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="roi-card glass-panel"
       >
-        <div className="roi-progress-bar">
-          <motion.div 
-            className="progress-fill"
-            initial={{ width: 0 }}
-            animate={{ width: `${((currentStep + 1) / 4) * 100}%` }}
-          />
+        <div className="roi-progress-steps">
+          {[0, 1, 2, 3].map((step) => (
+            <div 
+              key={step} 
+              className={`progress-dot ${step <= currentStep ? 'active' : ''}`}
+            />
+          ))}
         </div>
+        
         <AnimatePresence mode="wait">
           <motion.div 
             key={currentStep}
@@ -83,6 +86,7 @@ const ROICalculator: React.FC = () => {
                     max="100" 
                     value={employees} 
                     onChange={(e) => setEmployees(parseInt(e.target.value))} 
+                    style={{ backgroundSize: `${(employees - 1) * 100 / 99}% 100%` }}
                   />
                 </div>
               )}
@@ -96,6 +100,7 @@ const ROICalculator: React.FC = () => {
                     max="200" 
                     value={hourlyRate} 
                     onChange={(e) => setHourlyRate(parseInt(e.target.value))} 
+                    style={{ backgroundSize: `${(hourlyRate - 20) * 100 / 180}% 100%` }}
                   />
                 </div>
               )}
@@ -109,6 +114,7 @@ const ROICalculator: React.FC = () => {
                     max="40" 
                     value={manualHours} 
                     onChange={(e) => setManualHours(parseInt(e.target.value))} 
+                    style={{ backgroundSize: `${(manualHours - 1) * 100 / 39}% 100%` }}
                   />
                 </div>
               )}
@@ -134,20 +140,23 @@ const ROICalculator: React.FC = () => {
             <div className="roi-actions">
               {currentStep > 0 && currentStep < 3 && (
                 <button className="roi-btn-secondary" onClick={prevStep}>
-                  ← Back
+                  <ChevronLeft size={18} /> Back
                 </button>
               )}
               {currentStep < 3 ? (
-                <button className="roi-btn-primary" onClick={nextStep}>
-                  {currentStep === 2 ? 'See Results →' : 'Continue Audit →'}
+                <button 
+                  className={`roi-btn-primary ${currentStep < 3 ? 'cyan' : ''}`} 
+                  onClick={nextStep}
+                >
+                  {currentStep === 2 ? 'See Results' : 'Next'} <ChevronRight size={18} />
                 </button>
               ) : (
                 <div className="roi-final-actions">
                   <a href="#strategy" className="roi-btn-primary" style={{ textDecoration: 'none' }}>
-                    Book Strategy Call
+                    <Calendar size={18} /> Book Strategy Call
                   </a>
                   <button className="roi-btn-secondary" onClick={resetAudit}>
-                    Adjust Parameters
+                    <RefreshCcw size={18} /> Adjust Parameters
                   </button>
                 </div>
               )}

@@ -66,13 +66,19 @@ body {
     padding: 0 2rem;
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
 h1 {
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(2.5rem, 10vw, 5rem);
     line-height: 1.1;
 }
 
 h2 {
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-size: clamp(2rem, 8vw, 3.8rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
 }
@@ -88,7 +94,7 @@ h6 {
 }
 
 .section-title {
-    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-size: clamp(2rem, 8vw, 3.8rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
@@ -117,6 +123,13 @@ h6 {
     text-decoration: none;
     display: inline-block;
     box-shadow: 0 4px 15px rgba(202, 138, 4, 0.2);
+}
+
+@media (max-width: 640px) {
+    .btn-pill {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }
 
 [data-theme="dark"] .btn-pill {
