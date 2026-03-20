@@ -3,75 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROI Calculator Concepts</title>
+    <title>Business Transformation Concept 7</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background: #020617; color: white; font-family: 'Inter', sans-serif; }
-        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; }
+        body { background: #020617; color: white; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        .glass { background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(30px); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; }
         .gold-text { background: linear-gradient(135deg, #fff 30%, #fde047 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .cyan-text { color: #22d3ee; }
-        .slider-thumb { width: 24px; height: 24px; background: #fde047; border-radius: 50%; border: 4px solid #020617; }
+        .story-bar { height: 3px; border-radius: 2px; flex: 1; background: rgba(255,255,255,0.1); }
+        .story-bar.active { background: #fde047; }
+        
+        .mobile-screen {
+            width: 100vw;
+            height: 100vh;
+            max-width: 430px;
+            max-height: 932px;
+            background: #020617;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .tech-pill {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 9px;
+            font-weight: 700;
+            color: #a1a1aa;
+        }
     </style>
 </head>
-<body class="p-8 flex flex-col items-center gap-12">
+<body class="flex flex-col items-center py-12 gap-8">
     
-    <div class="flex flex-wrap justify-center gap-12">
+    <h2 class="text-xl font-bold">Concept 7: The "Rich Content" Spotlight</h2>
+
+    <div class="mobile-screen border-4 border-slate-800 rounded-[48px] shadow-2xl">
         
-        <!-- CONCEPT: PRAGMATIC MULTI-STEP -->
-        <div class="flex flex-col items-center gap-4">
-            <h2 class="text-xl font-bold">Pragmatic Audit Flow</h2>
-            <div class="w-[320px] h-[580px] bg-[#020617] border-4 border-slate-800 rounded-[40px] relative overflow-hidden flex flex-col p-8 shadow-2xl">
-                <!-- Progress bar -->
-                <div class="flex gap-1 mb-12">
-                    <div class="h-1 flex-1 bg-yellow-400 rounded-full"></div>
-                    <div class="h-1 flex-1 bg-yellow-400 rounded-full"></div>
-                    <div class="h-1 flex-1 bg-slate-700 rounded-full"></div>
-                </div>
-                
-                <span class="text-[10px] tracking-[0.3em] cyan-text font-bold mb-4 uppercase">Operational Audit</span>
-                <h3 class="text-3xl font-black mb-6 leading-[1.1]">How many hours <br/>are lost to <br/>manual work?</h3>
-                
-                <p class="text-slate-400 text-sm mb-12 leading-relaxed">Enter the average weekly hours per employee spent on repetitive, data-heavy tasks.</p>
-
-                <div class="glass p-6 mb-8 flex flex-col gap-4">
-                    <div class="flex justify-between items-end">
-                        <span class="text-slate-400 text-[10px] uppercase font-bold tracking-widest text-white/60">Manual Hours / Wk</span>
-                        <span class="text-2xl font-bold text-yellow-400">12</span>
-                    </div>
-                    <div class="h-2 bg-slate-800 rounded-full relative flex items-center">
-                        <div class="w-1/3 h-full bg-yellow-400 rounded-full"></div>
-                        <div class="slider-thumb absolute left-1/3 -translate-x-1/2"></div>
-                    </div>
-                </div>
-
-                <button class="w-full bg-white text-black font-black py-4 rounded-full mt-auto tracking-tight">SEE RESULTS →</button>
-            </div>
-            <p class="text-slate-400 text-sm max-w-[280px] text-center italic">"Direct, business-focused questions."</p>
+        <!-- SECTION HEADER -->
+        <div class="mb-4">
+            <span class="text-[10px] tracking-[0.3em] cyan-text font-bold mb-1 uppercase block">Success Stories</span>
+            <h3 class="text-3xl font-black leading-none tracking-tighter mb-3">Business <br/>Transformation</h3>
+            <p class="text-xs text-slate-400 leading-relaxed pr-4">We deploy operational leverage that scales your margins through high-velocity AI implementation.</p>
         </div>
 
-        <!-- CONCEPT: PRAGMATIC RESULT -->
-        <div class="flex flex-col items-center gap-4">
-            <h2 class="text-xl font-bold">Pragmatic Result</h2>
-            <div class="w-[320px] h-[580px] bg-[#020617] border-4 border-slate-800 rounded-[40px] relative overflow-hidden flex flex-col p-8 shadow-2xl items-center text-center">
-                
-                <div class="w-16 h-16 rounded-full bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center mb-8 mt-12">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        <!-- PROGRESS BARS BELOW TITLE -->
+        <div class="flex gap-2 mb-6">
+            <div class="story-bar active"></div>
+            <div class="story-bar"></div>
+            <div class="story-bar"></div>
+        </div>
+
+        <!-- THE RICH CARD -->
+        <div class="glass w-full flex-grow flex flex-col p-6 relative border-white/5 overflow-hidden">
+            <!-- Top Meta -->
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex flex-col">
+                    <span class="text-[9px] text-yellow-400 font-bold tracking-widest uppercase">Real Estate</span>
+                    <h4 class="text-xl font-black tracking-tight">Property Auditor AI</h4>
                 </div>
-
-                <span class="text-[10px] tracking-[0.3em] cyan-text font-bold mb-4 uppercase text-center text-cyan-400">Audit Complete</span>
-                <h3 class="text-2xl font-black mb-2 leading-tight">Your Annual <br/>Recovery Potential:</h3>
-                
-                <div class="flex flex-col items-center my-8">
-                    <h4 class="text-5xl font-black gold-text mb-2">$345,600</h4>
-                    <span class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">80% Automation Efficiency</span>
+                <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fde047" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                 </div>
-
-                <p class="text-slate-400 text-sm mb-12 leading-relaxed">This represents the capital currently lost to operational inefficiency that can be recovered through custom AI workflows.</p>
-
-                <button class="w-full bg-yellow-400 text-black font-black py-4 rounded-full mt-auto tracking-tight">BOOK STRATEGY CALL</button>
-                <button class="text-slate-500 text-[10px] uppercase font-bold tracking-widest mt-4">Adjust Parameters</button>
             </div>
-            <p class="text-slate-400 text-sm max-w-[280px] text-center italic">"Focused on recovery and clear action."</p>
+
+            <!-- Context Paragraph -->
+            <p class="text-[11px] text-slate-400 leading-relaxed mb-6">Seamlessly integrated Vision AI that analyzes 500+ property photos in seconds, saving investors $10k+ per deal by identifying hidden structural risks.</p>
+
+            <!-- TECH STACK (Filling the emptiness) -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-pill">Vision AI</span>
+                <span class="tech-pill">Vector DB</span>
+                <span class="tech-pill">Private LLM</span>
+            </div>
+
+            <!-- STAT GRID (Rich Impact) -->
+            <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-white/5 rounded-2xl p-4 border border-white/5">
+                    <span class="text-[8px] text-slate-500 uppercase tracking-widest font-bold block mb-1">ROI Impact</span>
+                    <h5 class="text-2xl font-black gold-text">+300%</h5>
+                </div>
+                <div class="bg-white/5 rounded-2xl p-4 border border-white/5">
+                    <span class="text-[8px] text-slate-500 uppercase tracking-widest font-bold block mb-1">Delivery</span>
+                    <h5 class="text-2xl font-black text-white">30 Days</h5>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="mt-auto pt-4 border-t border-white/5 flex justify-between items-center">
+                <div class="flex flex-col">
+                    <span class="text-[8px] text-cyan-400 font-black uppercase tracking-[0.2em]">System Status</span>
+                    <span class="text-[10px] text-white font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> LIVE & OPTIMIZED</span>
+                </div>
+                <button class="bg-white text-black text-[10px] font-black px-5 py-2.5 rounded-full uppercase tracking-widest flex items-center gap-2 shadow-lg shadow-white/5">
+                    Brief <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- NAVIGATION HINT -->
+        <div class="h-16 flex items-center justify-center">
+            <div class="flex flex-col items-center gap-1 opacity-20">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce"><path d="m7 15 5 5 5-5"></path><path d="m7 9 5 5 5-5"></path></svg>
+                <span class="text-[8px] font-bold uppercase tracking-[0.2em]">Next Section</span>
+            </div>
         </div>
 
     </div>

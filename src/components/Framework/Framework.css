@@ -27,7 +27,10 @@
 
 @media (max-width: 640px) {
   .framework-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
   }
 }
 
@@ -37,12 +40,19 @@
   position: relative;
   text-align: left;
   transition: all 0.4s ease;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
   .framework-card {
     padding: 2rem;
     border-radius: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .framework-card {
+    max-width: 90%;
   }
 }
 
