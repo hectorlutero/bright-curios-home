@@ -52,7 +52,7 @@ const Background: React.FC = () => {
 
       {/* Deep Page Cubes - SPREAD ACROSS PAGE */}
       <motion.div style={{ y: y8, position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
-        <Cube className="c8 focus-far" />
+        <Cube className="c8 focus-mid" />
       </motion.div>
       <motion.div style={{ y: y10, position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
         <Cube className="c10 focus-far" />
