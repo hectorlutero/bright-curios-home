@@ -78,9 +78,18 @@ const Background: React.FC = () => {
       >
         <Cube className="c3 focus-mid" />
       </motion.div>
-      {/*<motion.div style={{ y: y4, position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
-        <Cube className="c4 focus-near" />
-      </motion.div>*/}
+      <motion.div
+        style={{
+          y: y4,
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        {/*<Cube className="c4 focus-near" />*/}
+      </motion.div>
       <motion.div
         style={{
           y: y5,
